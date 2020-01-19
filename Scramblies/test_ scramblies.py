@@ -6,10 +6,32 @@ def test_simple_word():
   s2 = 'world'
   assert scramble(s1, s2) == True
 
+def test_faslse_result():
+  s1 = 'katas'
+  s2 = 'steak'
+  assert scramble(s1, s2) == False
 
+def test_more_complicated():
+  s1 = 'scriptjava'
+  s2 = 'javascript'
+  assert scramble(s1, s2) == True
 
+def test_real_complicated_stuff():
+  s1 = 'scriptingjava'
+  s2 = 'javascript'
+  assert scramble(s1, s2) == True
 
-# Test.assert_equals(scramble('cedewaraaossoqqyt', 'codewars'), True)
-# Test.assert_equals(scramble('katas', 'steak'), False)
-# Test.assert_equals(scramble('scriptjava', 'javascript'), True)
-# Test.assert_equals(scramble('scriptingjava', 'javascript'), True)
+def test_with_emojis():
+  s1 = '🍰 is sooo tasty'
+  s2 = '🍰'
+  assert scramble(s1, s2) == True
+
+def test_with_symbols():
+  s1 = '%$·&$%(/$%(&)) pvj28ru38rpoi3ojfv h89t'
+  s2 = 'pv89t'
+  assert scramble(s1, s2) == True
+
+def test_repeated_letters():
+  s1 = 'aka'
+  s2 = 'akka'
+  assert scramble(s1, s2) == False
